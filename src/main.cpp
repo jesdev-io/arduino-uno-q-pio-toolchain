@@ -1,3 +1,13 @@
+/*
+This demo firmware blinks the red LED on the Arduino Uno Q connected
+to the STM32U585 MCU. It can also receive the characters 1 to 9 which
+then determine the blinking speed, which it also echoes on change.
+The point of this firmware is to demonstrate how the MCU can run any
+program without the usage and middleware that the Arduino App Lab may
+inject. This brings the program back to a bare-metal state if desired:
+No Zephyr-OS, not even necessarily a library or framework. 
+*/
+
 #include <Arduino.h>
 #include "stm32u5xx_hal.h"
 
