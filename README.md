@@ -10,7 +10,7 @@ In general, you need a way to access the Debian OS on your Arduino Nano Q's MPU.
 
 | Method         | Requires                            |
 | -------------- | ----------------------------------- |
-| [Manual OpenOCD](#option-1-generic-local-build-with-manual-transport) | Pre-compiled firmware,               |
+| [Manual OpenOCD](#option-1-generic-local-build-with-manual-transport) | Pre-compiled firmware               |
 | [PIO remote](#option-2-remote-deployment-with-platformio)     | PIO account, local repository clone |
 |                |                                     |
 
@@ -33,7 +33,7 @@ adb push /local/path/firmware.elf /home/ardiuino/ # over USB
 Additionally, you will need [`QRB2210_swd.cfg`](./shared/QRB2210_swd.cfg) of this repo on your MPU, as it holds the openOCD configuration for the SWD connection between MPU and MPU. You can transfer it similarly:
 ```bash
 scp arduino-uno-q-pio-toolchain/shared/QRB2210_swd.cfg user@remote:/home/ardiuino/ # over network
-adb push /local/path/QRB2210_swd.cfg /home/ardiuino/ # over USB
+adb push arduino-uno-q-pio-toolchain/shared/QRB2210_swd.cfg /home/ardiuino/ # over USB
 ```
 
 *It is possible that this file already exists under a different name on the MPU. I wasn't able to find it.*
